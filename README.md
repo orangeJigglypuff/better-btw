@@ -2,12 +2,31 @@
 
 Claude Code [mods](https://code.claude.com/docs/en/plugins/mods/overview) by orangeJigglypuff (橘色胖丁).
 
+## For what
+
+Claude Code original `/btw` command is so dumb. `/wtf` does the same job in a side pane. Launch it with a hotkey if you hate typing `/`, `w`, `t`, and `f`.
+
+## Install
+
 Add the marketplace once, then install any mod from it:
 
 ```bash
 claude plugin marketplace add orangeJigglypuff/better-btw
 claude plugin install wtf@better-btw
 ```
+
+## Usage
+
+Two ways to ask:
+
+1. **Select, then `/wtf`.** Highlight any text on screen with the mouse (a word in Claude's reply, a line of a tool result, an error), then type `/wtf` and press Enter. A side pane opens and explains what it means in the context of this conversation.
+2. **Type the question.** `/wtf <anything>` asks about the text you typed instead, so it also works as a plain side question: `/wtf what does the --force flag do here`.
+
+Either way the answer stays in the pane and never enters the conversation. The pane keeps your last 10 questions (`last` / `next` to page through them) and has a follow-up field under each answer.
+
+Mouse selection needs the fullscreen terminal layout; elsewhere, type the question. Works while Claude is mid-turn.
+
+**Hotkey (optional).** Turn on the plugin's **Hotkey button** option in `/config`, then bind a key to `app:cycleDiffBase` in `~/.claude/keybindings.json`; select text and press it. The [wtf README](./wtf#optional-a-hotkey) explains what this changes.
 
 ## Mods
 
