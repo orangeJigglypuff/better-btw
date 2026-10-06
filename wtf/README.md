@@ -1,4 +1,4 @@
-# wtf?
+# wtf
 
 A [Claude Code mod](https://code.claude.com/docs/en/plugins/mods/overview) for the moment you read something in the conversation and think "wtf does that mean".
 

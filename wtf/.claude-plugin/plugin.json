@@ -1,6 +1,5 @@
 {
   "name": "wtf",
-  "displayName": "wtf?",
   "version": "0.1.2",
   "description": "Select text, run /wtf, and a side pane explains what it means in the context of this conversation, without adding anything to the conversation.",
   "author": {
