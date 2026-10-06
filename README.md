@@ -17,11 +17,9 @@ claude plugin install wtf@better-btw
 
 ## Usage
 
-Three ways to ask:
-
-1. **Select, then `/wtf`.** Highlight any text on screen with the mouse (a word in Claude's reply, a line of a tool result, an error), then type `/wtf` and press Enter. A side pane opens and explains what it means in the context of this conversation.
-2. **Type the question.** `/wtf <anything>` asks about the text you typed instead, so it also works as a plain side question: `/wtf what does the --force flag do here`.
-3. **Hotkey (optional).** Turn on the plugin's **Hotkey button** option in `/config`, then bind a key to `app:cycleDiffBase` in `~/.claude/keybindings.json`; select text and press it. The [wtf README](./wtf#optional-a-hotkey) explains what this changes.
+1. **Select any text, type `/wtf`.**
+2. **Type `/wtf <anything>`**.
+3. **Select any text and press a hotkey.** Tell your agent to turn on the plugin's hotkey button option, then bind a key to `app:cycleDiffBase` in `~/.claude/keybindings.json`.
 
 ## Mods
 
