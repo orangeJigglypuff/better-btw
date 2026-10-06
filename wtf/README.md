@@ -28,9 +28,23 @@ Or, from inside a Claude Code session: `/plugin install wtf --marketplace orange
 
 To try it for one session without installing, clone [the repository](https://github.com/orangeJigglypuff/better-btw) and run `claude --plugin-dir ./better-btw/wtf`.
 
-## How it works
+## What it does, and what it sends where
 
-Each question is one tool-less model call forked from your session's own transcript (`$.model.fork`), on the same model and system prompt, so the prompt cache serves most of it. The call runs on your plan or API key. Nothing is written to disk and nothing is sent anywhere else.
+The mod is one hooks module, `hooks/register.tsx`. It hooks four events:
+
+| Hook | What it does |
+| :- | :- |
+| `session.start` | Registers the `/wtf` command. Then lets the session start as usual. |
+| `command.run` for `wtf` | Reads the command's argument, or your mouse selection when there is none, and asks the question (below). Prints nothing to the transcript, except a one-line usage hint when there was nothing to ask about. |
+| `ui.render` for `Pane` | Draws the side pane from the questions and answers it keeps in session state. |
+| `ui.render` for `PromptHint` | Only with the **Hotkey button** option on: redraws the hint line under the prompt with the same text plus an invisible button, so a bound key can ask about the selection. With the option off, the hook passes the line through untouched. |
+
+Asking a question sends exactly one request to the model, through Claude Code's own API client, on the model and plan or API key your session already uses. Nothing goes anywhere else: the mod makes no network requests of its own, runs no processes, and reads and writes no files.
+
+- Normally the request is `$.model.fork`: your session's transcript as Claude Code last sent it, plus one user message holding the selected text (or your typed question, and on a follow-up the earlier questions and answers of that thread). The same prefix as your session's own requests, so the prompt cache serves most of it.
+- In a resumed session that has not yet sent a request, there is nothing to fork, so the mod instead sends `$.model.complete` on the session's model: the text of the saved transcript's messages (the last 80,000 characters, without tool inputs or results) plus the same question.
+
+Answers and history live in session state (`$.state`) and are gone when the session ends. The mod calls no other plugin.
 
 Run `claude plugin validate ./wtf` to list every event the mod hooks and every API it calls before you load it.
 

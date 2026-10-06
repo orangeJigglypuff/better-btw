@@ -1,7 +1,7 @@
 {
   "name": "wtf",
   "displayName": "wtf?",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Select text, run /wtf, and a side pane explains what it means in the context of this conversation, without adding anything to the conversation.",
   "author": {
     "name": "orangeJigglypuff",
@@ -25,5 +25,6 @@
       "description": "Keep an invisible button at the end of the hint line under the prompt, so a key you bind to app:cycleDiffBase asks about the selection even while the pane is closed. See the README before turning it on.",
       "default": false
     }
-  }
+  },
+  "icon": "./.claude-plugin/icon.png"
 }
