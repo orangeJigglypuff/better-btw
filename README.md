@@ -2,7 +2,7 @@
 
 Claude Code [mods](https://code.claude.com/docs/en/plugins/mods/overview) by orangeJigglypuff.
 
-## Why you have to use it?
+## Why use it?
 
 Claude Code original `/btw` command is so dumb. `/wtf` does the same job in a side pane. Launch it with a hotkey if you hate typing `/`, `w`, `t`, and `f`.
 
