@@ -1,0 +1,15 @@
+{
+  "name": "better-btw",
+  "description": "Claude Code mods by orangeJigglypuff (橘色胖丁).",
+  "owner": {
+    "name": "orangeJigglypuff",
+    "url": "https://github.com/orangeJigglypuff"
+  },
+  "plugins": [
+    {
+      "name": "wtf",
+      "source": "./wtf",
+      "description": "Select text, run /wtf, and a side pane explains it in the context of the conversation."
+    }
+  ]
+}

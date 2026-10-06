@@ -1,0 +1,29 @@
+{
+  "name": "wtf",
+  "displayName": "wtf?",
+  "version": "0.1.0",
+  "description": "Select text, run /wtf, and a side pane explains what it means in the context of this conversation, without adding anything to the conversation.",
+  "author": {
+    "name": "orangeJigglypuff",
+    "url": "https://github.com/orangeJigglypuff"
+  },
+  "homepage": "https://github.com/orangeJigglypuff/better-btw/tree/main/wtf",
+  "repository": "https://github.com/orangeJigglypuff/better-btw",
+  "license": "MIT",
+  "keywords": [
+    "mod",
+    "pane",
+    "explain",
+    "selection",
+    "side-question"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "hotkey": {
+      "type": "boolean",
+      "title": "Hotkey button",
+      "description": "Keep an invisible button at the end of the hint line under the prompt, so a key you bind to app:cycleDiffBase asks about the selection even while the pane is closed. See the README before turning it on.",
+      "default": false
+    }
+  }
+}
