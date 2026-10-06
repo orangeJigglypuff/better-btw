@@ -12,6 +12,8 @@ const MAX_BASIS = 6000
 const MAX_TRANSCRIPT = 80000
 const SPINNER = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
 const SPIN_MS = 100
+// 橘色胖丁's orange.
+const ORANGE = '#ff8c42'
 // The engine has no key event for a mod: a Button naming an engine keybinding
 // action is pressed by the chord the person bound to that action, from the
 // prompt, while the Button is mounted. This action's own handler lives in the
@@ -243,7 +245,7 @@ export const register: Register = (on, options) => {
             dimColor={at === 0}
             onPress={move(-1)}
           />
-          <Text bold color="magenta">
+          <Text bold color={ORANGE}>
             [{at + 1} / {list.length}]
           </Text>
           <Button
@@ -260,7 +262,7 @@ export const register: Register = (on, options) => {
           </Text>
         </Box>
         <Box flexDirection="column" paddingX={1} marginY={1}>
-          {spinner !== undefined && <Text color="magenta">{spinner} {text.reading}</Text>}
+          {spinner !== undefined && <Text color={ORANGE}>{spinner} {text.reading}</Text>}
           {entry.status === 'failed' && <Text color="red">{entry.answer}</Text>}
           {entry.status === 'done' && <Markdown text={entry.answer} />}
         </Box>
